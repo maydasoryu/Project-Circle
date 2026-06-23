@@ -9,11 +9,12 @@
 </head>
 <body class="loading">
     
-    <!-- Premium Launch Sequence Loader -->
+    <!-- Grand Launch Sequence Loader -->
     <div id="loader" class="m3-loader">
         <h1 class="loader-logo">
             <span class="text-white">Project</span><span class="text-primary">Circle</span>
         </h1>
+        <div class="loader-ripple"></div>
     </div>
 
     <!-- Background System -->
@@ -42,15 +43,16 @@
     <main>
         <!-- Hero Section -->
         <section id="hero" class="m3-section hero-section">
+            <div class="hero-glow"></div>
             <div class="hero-content">
-                <h1 class="hero-title m3-animate m3-spring-up">
-                    <span class="text-white char-reveal">Project</span>
-                    <span class="text-primary char-reveal">Circle</span>
+                <h1 class="hero-title m3-intro-anim">
+                    <span class="text-white">Project</span>
+                    <span class="text-primary">Circle</span>
                 </h1>
-                <p class="hero-subtitle m3-animate m3-fade-slide-up m3-delay-1">
+                <p class="hero-subtitle m3-intro-anim m3-delay-1">
                     LineageOS based Lightweight Fine Crafted OS
                 </p>
-                <div class="hero-actions m3-animate m3-scale-up m3-delay-2">
+                <div class="hero-actions m3-intro-anim m3-delay-2">
                     <a href="#about" class="m3-button m3-button-filled m-ripple breathing">
                         Explore
                     </a>
@@ -84,22 +86,24 @@
             
             <div class="m3-carousel-wrapper m3-animate m3-fade-slide-up m3-delay-1">
                 <button class="m3-icon-button carousel-prev m-ripple" aria-label="Previous">&lt;</button>
-                <div class="m3-carousel features-carousel" id="featuresTrack">
-                    <div class="m3-card m3-feature-card"><div class="card-content"><h3>Devshell Derivation</h3><p>[For developers] Devshell derivation for building the ROM on NixOS</p></div></div>
-                    <div class="m3-card m3-feature-card"><div class="card-content"><h3>GApps Package</h3><p>Small GApps package for GApps builds</p></div></div>
-                    <div class="m3-card m3-feature-card"><div class="card-content"><h3>Clean Face Unlock</h3><p>Face unlock without the ugly face icon on lock screen</p></div></div>
-                    <div class="m3-card m3-feature-card"><div class="card-content"><h3>Google Feed</h3><p>Google Feed deeply integrated on Trebuchet</p></div></div>
-                    <div class="m3-card m3-feature-card"><div class="card-content"><h3>Advanced Spoofing</h3><p>Spoofing for developer options, PIF, Tricky Store and per-app individual device spoofing</p></div></div>
-                    <div class="m3-card m3-feature-card"><div class="card-content"><h3>Flashlight Control</h3><p>Precise flashlight level adjustment</p></div></div>
-                    <div class="m3-card m3-feature-card"><div class="card-content"><h3>Pocket Lock</h3><p>Smart pocket lock prevention</p></div></div>
-                    <div class="m3-card m3-feature-card"><div class="card-content"><h3>AOD Wallpaper</h3><p>Wallpaper on AOD (unless force disabled by device maintainer)</p></div></div>
-                    <div class="m3-card m3-feature-card"><div class="card-content"><h3>Lineage Base</h3><p>All core Lineage features preserved seamlessly</p></div></div>
+                <div class="carousel-mask">
+                    <div class="m3-carousel features-carousel" id="featuresTrack">
+                        <div class="m3-card m3-feature-card"><div class="card-content"><h3>Devshell Derivation</h3><p>[For developers] Devshell derivation for building the ROM on NixOS</p></div></div>
+                        <div class="m3-card m3-feature-card"><div class="card-content"><h3>GApps Package</h3><p>Small GApps package for GApps builds</p></div></div>
+                        <div class="m3-card m3-feature-card"><div class="card-content"><h3>Clean Face Unlock</h3><p>Face unlock without the ugly face icon on lock screen</p></div></div>
+                        <div class="m3-card m3-feature-card"><div class="card-content"><h3>Google Feed</h3><p>Google Feed deeply integrated on Trebuchet</p></div></div>
+                        <div class="m3-card m3-feature-card"><div class="card-content"><h3>Advanced Spoofing</h3><p>Spoofing for developer options, PIF, Tricky Store and per-app individual device spoofing</p></div></div>
+                        <div class="m3-card m3-feature-card"><div class="card-content"><h3>Flashlight Control</h3><p>Precise flashlight level adjustment</p></div></div>
+                        <div class="m3-card m3-feature-card"><div class="card-content"><h3>Pocket Lock</h3><p>Smart pocket lock prevention</p></div></div>
+                        <div class="m3-card m3-feature-card"><div class="card-content"><h3>AOD Wallpaper</h3><p>Wallpaper on AOD (unless force disabled by device maintainer)</p></div></div>
+                        <div class="m3-card m3-feature-card"><div class="card-content"><h3>Lineage Base</h3><p>All core Lineage features preserved seamlessly</p></div></div>
+                    </div>
                 </div>
                 <button class="m3-icon-button carousel-next m-ripple" aria-label="Next">&gt;</button>
             </div>
         </section>
 
-        <!-- Screenshots Section (Portrait Fixed) -->
+        <!-- Screenshots Section (Portrait Fixed & Centered) -->
         <section id="screenshots" class="m3-section">
             <div class="section-header m3-animate m3-spring-up">
                 <h2 class="section-title">Screenshots</h2>
@@ -107,23 +111,25 @@
             
             <div class="m3-showcase-wrapper m3-animate m3-fade-slide-up m3-delay-1">
                 <button class="m3-icon-button showcase-prev m-ripple" aria-label="Previous">&lt;</button>
-                <div class="m3-showcase screenshots-carousel" id="screenshotsTrack">
-                    <div class="m3-showcase-item"><img src="assets/screenshots/screenshot1.jpg" alt="Screenshot 1"></div>
-                    <div class="m3-showcase-item"><img src="assets/screenshots/screenshot2.jpg" alt="Screenshot 2"></div>
-                    <div class="m3-showcase-item"><img src="assets/screenshots/screenshot3.jpg" alt="Screenshot 3"></div>
-                    <div class="m3-showcase-item"><img src="assets/screenshots/screenshot4.jpg" alt="Screenshot 4"></div>
-                    <div class="m3-showcase-item"><img src="assets/screenshots/screenshot5.jpg" alt="Screenshot 5"></div>
-                    <div class="m3-showcase-item"><img src="assets/screenshots/screenshot6.jpg" alt="Screenshot 6"></div>
-                    <div class="m3-showcase-item"><img src="assets/screenshots/screenshot7.jpg" alt="Screenshot 7"></div>
-                    <div class="m3-showcase-item"><img src="assets/screenshots/screenshot8.jpg" alt="Screenshot 8"></div>
-                    <div class="m3-showcase-item"><img src="assets/screenshots/screenshot9.jpg" alt="Screenshot 9"></div>
-                    <div class="m3-showcase-item"><img src="assets/screenshots/screenshot10.jpg" alt="Screenshot 10"></div>
+                <div class="carousel-mask">
+                    <div class="m3-showcase screenshots-carousel" id="screenshotsTrack">
+                        <div class="m3-showcase-item"><img src="assets/screenshots/screenshot1.jpg" alt="Screenshot 1"></div>
+                        <div class="m3-showcase-item"><img src="assets/screenshots/screenshot2.jpg" alt="Screenshot 2"></div>
+                        <div class="m3-showcase-item"><img src="assets/screenshots/screenshot3.jpg" alt="Screenshot 3"></div>
+                        <div class="m3-showcase-item"><img src="assets/screenshots/screenshot4.jpg" alt="Screenshot 4"></div>
+                        <div class="m3-showcase-item"><img src="assets/screenshots/screenshot5.jpg" alt="Screenshot 5"></div>
+                        <div class="m3-showcase-item"><img src="assets/screenshots/screenshot6.jpg" alt="Screenshot 6"></div>
+                        <div class="m3-showcase-item"><img src="assets/screenshots/screenshot7.jpg" alt="Screenshot 7"></div>
+                        <div class="m3-showcase-item"><img src="assets/screenshots/screenshot8.jpg" alt="Screenshot 8"></div>
+                        <div class="m3-showcase-item"><img src="assets/screenshots/screenshot9.jpg" alt="Screenshot 9"></div>
+                        <div class="m3-showcase-item"><img src="assets/screenshots/screenshot10.jpg" alt="Screenshot 10"></div>
+                    </div>
                 </div>
                 <button class="m3-icon-button showcase-next m-ripple" aria-label="Next">&gt;</button>
             </div>
         </section>
 
-        <!-- Supported Devices Section (Refined Layout) -->
+        <!-- Supported Devices Section -->
         <section id="devices" class="m3-section">
             <div class="section-header m3-animate m3-spring-up">
                 <h2 class="section-title">Supported Devices</h2>
@@ -153,9 +159,44 @@
             </div>
         </section>
 
-        <!-- Changelogs & Credits Sections remain exactly identical, collapsed here for brevity in rendering. -->
-        <!-- ... Include Changelogs and Credits ... -->
+        <!-- Changelogs Section -->
+        <section id="changelogs" class="m3-section">
+            <div class="section-header m3-animate m3-spring-up">
+                <h2 class="section-title">Changelogs</h2>
+            </div>
+            <div class="m3-timeline">
+                <div class="m3-timeline-item m3-animate m3-slide-in-left">
+                    <div class="timeline-dot"></div>
+                    <div class="m3-card timeline-card">
+                        <h3>Version 1.0</h3>
+                        <ul>
+                            <li>Initial Release</li>
+                            <li>Device Bring-up</li>
+                            <li>Core Features Added</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
 
+        <!-- Full Credits Section -->
+        <section id="credits" class="m3-section">
+            <div class="section-header m3-animate m3-spring-up">
+                <h2 class="section-title">Credits</h2>
+            </div>
+            <div class="m3-grid-auto">
+                <div class="m3-card m3-credit-card m3-animate m3-fade-slide-up"><div class="credit-content"><h3 class="text-primary">Project Kasumi Community</h3><p>The idea and the driving force</p></div></div>
+                <div class="m3-card m3-credit-card m3-animate m3-fade-slide-up m3-delay-1"><div class="credit-content"><h3>LineageOS</h3><p>Base ROM</p></div></div>
+                <div class="m3-card m3-credit-card m3-animate m3-fade-slide-up m3-delay-2"><div class="credit-content"><h3>halogenOS</h3><p>Base Nix devshell</p></div></div>
+                <div class="m3-card m3-credit-card m3-animate m3-fade-slide-up m3-delay-1"><div class="credit-content"><h3>DivestOS</h3><p>Patches to nuke analytics</p></div></div>
+                <div class="m3-card m3-credit-card m3-animate m3-fade-slide-up m3-delay-2"><div class="credit-content"><h3>Project Sakura</h3><p>Some design ideas and specific features</p></div></div>
+                <div class="m3-card m3-credit-card m3-animate m3-fade-slide-up m3-delay-1"><div class="credit-content"><h3>Halcyon</h3><p>Specific features</p></div></div>
+                <div class="m3-card m3-credit-card m3-animate m3-fade-slide-up m3-delay-2"><div class="credit-content"><h3>The Clover Project</h3><p>Specific features and fonts</p></div></div>
+                <div class="m3-card m3-credit-card m3-animate m3-fade-slide-up m3-delay-1"><div class="credit-content"><h3>crDroid</h3><p>Specific fixes and improvements</p></div></div>
+                <div class="m3-card m3-credit-card m3-animate m3-fade-slide-up m3-delay-2"><div class="credit-content"><h3>AxionOS</h3><p>Specific fixes and improvements</p></div></div>
+                <div class="m3-card m3-credit-card m3-animate m3-fade-slide-up m3-delay-1"><div class="credit-content"><h3>LineageOS-Ext</h3><p>Specific fixes and improvements</p></div></div>
+            </div>
+        </section>
     </main>
 
     <script src="script.js"></script>

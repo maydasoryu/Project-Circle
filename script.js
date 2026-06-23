@@ -4,11 +4,12 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    // 1. Premium Launch Sequence
+    // 1. Premium Grand Launch Sequence
+    // Waits slightly, then triggers the body class to fade loader and pop hero content
     setTimeout(() => {
         document.body.classList.remove('loading');
         document.body.classList.add('loaded');
-    }, 1200);
+    }, 1500); // 1.5 seconds gives the pulse and letter-spacing time to shine
 
     // 2. Ripple Effect Logic
     const rippleElements = document.querySelectorAll('.m-ripple');
@@ -39,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
         button.appendChild(circle);
     }
 
-    // 3. Sticky App Bar Scroll Effect
+    // 3. Sticky App Bar Blur Effect
     const navbar = document.getElementById('navbar');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -67,34 +68,36 @@ document.addEventListener('DOMContentLoaded', () => {
         const track = document.getElementById(trackId);
         if (!track) return;
 
-        const prevBtn = track.parentElement.querySelector(prevBtnClass);
-        const nextBtn = track.parentElement.querySelector(nextBtnClass);
+        // The buttons are placed relative to the wrapper, so we query the wrapper
+        const wrapper = track.closest('.m3-carousel-wrapper, .m3-showcase-wrapper');
+        const prevBtn = wrapper.querySelector(prevBtnClass);
+        const nextBtn = wrapper.querySelector(nextBtnClass);
         const items = Array.from(track.children);
 
         function animateInteraction(btn, direction) {
             // Spring animation on the button itself
             btn.classList.remove('btn-press-anim');
-            void btn.offsetWidth; // trigger reflow
+            void btn.offsetWidth; // force DOM reflow to restart animation
             btn.classList.add('btn-press-anim');
 
             // Apply a Material Container Transform squish effect to the items before shifting
             track.classList.add('track-shifting');
             
             setTimeout(() => {
-                const itemWidth = items[0].getBoundingClientRect().width + 24;
+                const itemWidth = items[0].getBoundingClientRect().width + 24; // Width + Gap
                 track.scrollBy({ left: direction * itemWidth, behavior: 'smooth' });
                 
                 // Remove shift class as they arrive at destination
                 setTimeout(() => {
                     track.classList.remove('track-shifting');
                 }, 400); 
-            }, 100); // slight delay for the visual squish to process
+            }, 100);
         }
 
         if(prevBtn) prevBtn.addEventListener('click', () => animateInteraction(prevBtn, -1));
         if(nextBtn) nextBtn.addEventListener('click', () => animateInteraction(nextBtn, 1));
 
-        // Center Mode Scaling (specifically for Screenshots)
+        // Center Mode Active Scaling (For Screenshots 1-10)
         if (isCenterMode) {
             const updateActiveItem = () => {
                 const trackCenter = track.getBoundingClientRect().left + (track.clientWidth / 2);
@@ -116,7 +119,7 @@ document.addEventListener('DOMContentLoaded', () => {
             };
 
             track.addEventListener('scroll', () => requestAnimationFrame(updateActiveItem));
-            setTimeout(updateActiveItem, 100);
+            setTimeout(updateActiveItem, 200); // Initial check
             window.addEventListener('resize', updateActiveItem);
         }
 
@@ -127,7 +130,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         track.addEventListener('mousedown', (e) => {
             isDown = true;
-            track.style.scrollBehavior = 'auto';
+            track.style.scrollBehavior = 'auto'; // Instant drag feeling
             track.style.cursor = 'grabbing';
             startX = e.pageX - track.offsetLeft;
             scrollLeft = track.scrollLeft;
@@ -135,7 +138,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         track.addEventListener('mouseleave', () => {
             isDown = false;
-            track.style.scrollBehavior = 'smooth';
+            track.style.scrollBehavior = 'smooth'; // Restore snap
             track.style.cursor = '';
         });
         
@@ -149,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!isDown) return;
             e.preventDefault();
             const x = e.pageX - track.offsetLeft;
-            const walk = (x - startX) * 2;
+            const walk = (x - startX) * 2.5; // Drag speed multiplier
             track.scrollLeft = scrollLeft - walk;
         });
     }
