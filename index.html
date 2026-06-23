@@ -5,27 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project CiRCLE | Premium Custom ROM</title>
     
-    <!-- Forced Favicons -->
     <link rel="icon" type="image/svg+xml" href="assets/logo.svg">
-    <link rel="shortcut icon" href="assets/logo.svg">
-    <link rel="apple-touch-icon" href="assets/logo.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/logo.png">
+    <link rel="apple-touch-icon" href="assets/logo.png">
     
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="loading">
     
-    <!-- Background System -->
     <div class="video-background">
-        <!-- Desktop Video -->
         <video class="bg-desktop" src="assets/bg.mp4" autoplay loop muted playsinline></video>
-        <!-- Static Mobile Image -->
         <img class="bg-mobile" src="assets/bg-mobile.jpg" alt="Background">
         
         <div class="m3-dynamic-gradient"></div>
         <div class="m3-surface-tint"></div>
     </div>
 
-    <!-- Grand Launch Sequence Loader -->
     <div id="loader" class="m3-loader">
         <img src="assets/logo.svg" alt="Project CiRCLE Logo" class="loader-svg">
         <h1 class="loader-logo">
@@ -34,7 +29,6 @@
         <div class="loader-ripple"></div>
     </div>
 
-    <!-- Sticky Floating App Bar -->
     <header id="navbar" class="m3-app-bar">
         <div class="nav-container">
             <a href="#" class="nav-logo m-ripple">
@@ -42,7 +36,6 @@
                 <span class="text-white">Project</span><span class="text-primary">CiRCLE</span>
             </a>
             
-            <!-- Desktop Links -->
             <nav class="nav-links">
                 <a href="#about" class="nav-link m-ripple">About</a>
                 <a href="#features" class="nav-link m-ripple">Features</a>
@@ -50,7 +43,6 @@
                 <a href="#devices" class="nav-link m-ripple">Devices</a>
             </nav>
 
-            <!-- Mobile 3 Dots Menu -->
             <button id="mobile-menu-btn" class="mobile-menu-btn m-ripple" aria-label="Menu">
                 <svg viewBox="0 0 24 24" width="28" height="28" fill="#FFFFFF">
                     <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
@@ -58,7 +50,6 @@
             </button>
         </div>
         
-        <!-- Mobile Dropdown -->
         <div id="mobile-dropdown" class="mobile-dropdown">
             <a href="#about" class="dropdown-link m-ripple">About</a>
             <a href="#features" class="dropdown-link m-ripple">Features</a>
@@ -68,11 +59,9 @@
     </header>
 
     <main>
-        <!-- Hero Section -->
         <section id="hero" class="m3-section hero-section">
             <div class="hero-glow"></div>
             <div class="hero-grid">
-                <!-- Left: Typography -->
                 <div class="hero-content">
                     <h1 class="hero-title m3-intro-anim">
                         <span class="text-white">Project</span><br>
@@ -88,7 +77,6 @@
                     </div>
                 </div>
                 
-                <!-- Right: Premium Curved Thumbnail -->
                 <div class="hero-visual m3-intro-anim m3-delay-3">
                     <div class="hero-thumbnail-wrapper">
                         <div class="thumbnail-glow"></div>
@@ -98,7 +86,6 @@
             </div>
         </section>
 
-        <!-- About Section -->
         <section id="about" class="m3-section">
             <div class="m3-card about-card m3-animate m3-scale-up">
                 <h2 class="section-title text-primary m3-animate m3-slide-in-left m3-delay-1">Project CiRCLE!</h2>
@@ -116,7 +103,6 @@
             </div>
         </section>
 
-        <!-- Features Section -->
         <section id="features" class="m3-section">
             <div class="section-header m3-animate m3-spring-up">
                 <h2 class="section-title">Features</h2>
@@ -141,7 +127,6 @@
             </div>
         </section>
 
-        <!-- Screenshots Section -->
         <section id="screenshots" class="m3-section">
             <div class="section-header m3-animate m3-spring-up">
                 <h2 class="section-title">Screenshots</h2>
@@ -167,28 +152,27 @@
             </div>
         </section>
 
-        <!-- Supported Devices Section (BUG FIXED) -->
         <section id="devices" class="m3-section">
             <div class="section-header m3-animate m3-spring-up">
                 <h2 class="section-title">Supported Devices</h2>
             </div>
             <div class="m3-grid-3">
                 <div class="m3-device-card m3-animate m3-scale-up">
-                    <img src="assets/device/m34.jpg" alt="m34x">
+                    <img src="device/m34.jpg" alt="m34x">
                     <div class="device-info">
                         <h3>m34x</h3>
                         <span class="status-soon">Coming Soon</span>
                     </div>
                 </div>
                 <div class="m3-device-card m3-animate m3-scale-up m3-delay-1">
-                    <img src="assets/device/merlin.jpg" alt="merlin">
+                    <img src="device/merlin.jpg" alt="merlin">
                     <div class="device-info">
                         <h3>merlin</h3>
                         <span class="status-soon">Coming Soon</span>
                     </div>
                 </div>
                 <div class="m3-device-card m3-animate m3-scale-up m3-delay-2">
-                    <img src="assets/device/lancelot.jpg" alt="lancelot">
+                    <img src="device/lancelot.jpg" alt="lancelot">
                     <div class="device-info">
                         <h3>lancelot</h3>
                         <span class="status-soon">Coming Soon</span>
@@ -197,7 +181,6 @@
             </div>
         </section>
 
-        <!-- Changelogs Section -->
         <section id="changelogs" class="m3-section">
             <div class="section-header m3-animate m3-spring-up">
                 <h2 class="section-title">Changelogs</h2>
@@ -217,7 +200,6 @@
             </div>
         </section>
 
-        <!-- Credits Section -->
         <section id="credits" class="m3-section">
             <div class="section-header m3-animate m3-spring-up">
                 <h2 class="section-title">Credits</h2>
@@ -237,7 +219,6 @@
         </section>
     </main>
 
-    <!-- Footer -->
     <footer class="m3-footer">
         <div class="footer-content m3-animate m3-fade-slide-up">
             <img src="assets/logo.svg" alt="Project CiRCLE Logo" class="footer-logo">
