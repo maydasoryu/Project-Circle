@@ -1,5 +1,5 @@
 /* ==========================================================================
-   MATERIAL 3 EXPRESSIVE DESIGN SYSTEM (FINAL)
+   MATERIAL 3 EXPRESSIVE - PROJECT CIRCLE (FINAL POLISH)
    ========================================================================== */
 
 /* Local Custom Font Integration */
@@ -35,18 +35,8 @@
 
 /* Base resets & Transparent bg for video */
 * { margin: 0; padding: 0; box-sizing: border-box; -webkit-tap-highlight-color: transparent; }
-html, body { 
-    background-color: transparent !important; 
-    color: #FFF; 
-    scroll-behavior: smooth; 
-    overflow-x: hidden; 
-}
-body { 
-    font-family: var(--md-sys-typescale-body-font); 
-    position: relative; 
-    -webkit-font-smoothing: antialiased; /* FINAL TOUCH: Makes text super crisp */
-    -moz-osx-font-smoothing: grayscale;
-}
+html, body { background-color: transparent !important; color: #FFF; scroll-behavior: smooth; overflow-x: hidden; }
+body { font-family: var(--md-sys-typescale-body-font); position: relative; -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
 .text-white { color: #FFFFFF; }
 .text-primary { color: #FF7B9B; }
@@ -105,7 +95,6 @@ body.loaded #loader { opacity: 0; transform: scale(1.1); pointer-events: none; }
 .hero-title { font-family: var(--md-sys-typescale-font); font-size: clamp(3.5rem, 7vw, 7rem); line-height: 1.05; font-weight: 800; letter-spacing: -0.04em; margin-bottom: 24px; text-shadow: 0 10px 40px rgba(0,0,0,0.5); }
 .hero-subtitle { font-size: 1.75rem; color: rgba(255,255,255,0.85); margin-bottom: 48px; max-width: 600px; line-height: 1.5; }
 
-/* FINAL TOUCH: Smoother, richer button glow */
 .m3-button-filled { display: inline-flex; align-items: center; justify-content: center; background: var(--md-sys-color-primary-container); color: var(--md-sys-color-on-primary-container); padding: 20px 56px; font-size: 1.25rem; font-weight: 600; text-decoration: none; border-radius: var(--md-sys-shape-corner-full); box-shadow: 0 8px 24px rgba(82, 29, 44, 0.3); transition: transform 400ms var(--md-sys-motion-easing-emphasized), box-shadow 400ms, filter 400ms; }
 .m3-button-filled:hover { transform: translateY(-6px) scale(1.05); box-shadow: 0 20px 40px rgba(255, 123, 155, 0.3); filter: brightness(1.1); }
 
@@ -134,15 +123,22 @@ body.loaded .m3-intro-anim { opacity: 1; transform: translateY(0) scale(1); }
 .about-content p { font-size: 1.35rem; line-height: 1.8; color: rgba(255,255,255,0.85); margin-bottom: 24px; max-width: 900px; margin-left: auto; margin-right: auto; }
 .about-highlight { font-size: 1.6rem !important; color: var(--md-sys-color-on-secondary-container) !important; font-family: var(--md-sys-typescale-font); margin-top: 40px; font-weight: 500; }
 
-/* Base Card utility */
 .m3-card { background: var(--md-sys-color-surface-container); border-radius: var(--md-sys-shape-corner-large); padding: 32px; border: 1px solid rgba(255,255,255,0.03); box-shadow: 0 8px 24px rgba(0,0,0,0.4); transition: transform 400ms var(--md-sys-motion-easing-emphasized), box-shadow 400ms, background 400ms; }
 .m3-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 24px 64px rgba(0,0,0,0.7); background: var(--md-sys-color-surface-container-high); }
 
 /* ==========================================================================
-   CAROUSELS & FEATURES (FIXED BORDER RADIUS)
+   CAROUSELS (FIXED EDGE MASK & SHADOW CLIPPING)
    ========================================================================== */
 .m3-carousel-wrapper, .m3-showcase-wrapper { position: relative; display: flex; align-items: center; width: 100%; }
-.carousel-mask { width: 100%; overflow: hidden; -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%); mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%); }
+
+/* FIX: Added heavy padding so massive box-shadows don't get sliced off into boxy rectangles */
+.carousel-mask { 
+    width: 100%; 
+    padding: 60px 0; 
+    margin: -60px 0; 
+    -webkit-mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%); 
+    mask-image: linear-gradient(to right, transparent 0%, black 5%, black 95%, transparent 100%); 
+}
 
 .m3-carousel, .m3-showcase { display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; overflow-x: auto !important; scroll-snap-type: x mandatory; scrollbar-width: none; gap: 24px; padding: 24px 0; width: 100%; -webkit-overflow-scrolling: touch; }
 .m3-carousel::-webkit-scrollbar, .m3-showcase::-webkit-scrollbar { display: none; }
@@ -157,7 +153,6 @@ body.loaded .m3-intro-anim { opacity: 1; transform: translateY(0) scale(1); }
 
 .track-shifting .m3-feature-card, .track-shifting .m3-showcase-item { transform: scale(0.92) !important; filter: blur(2px); transition: transform 300ms var(--md-sys-motion-easing-emphasized), filter 300ms; }
 
-/* FIX: Guaranteed curved edges, padding, and styling independent of other classes */
 .m3-feature-card { 
     width: 350px !important; 
     flex: 0 0 350px !important; 
@@ -166,25 +161,39 @@ body.loaded .m3-intro-anim { opacity: 1; transform: translateY(0) scale(1); }
     display: flex; 
     flex-direction: column; 
     justify-content: center;
-    background: var(--md-sys-color-surface-container); 
-    border-radius: var(--md-sys-shape-corner-large) !important; /* Forces curved edges */
-    padding: 32px; 
+    background: var(--md-sys-color-surface-container) !important; 
+    border-radius: var(--md-sys-shape-corner-large) !important; 
+    -webkit-border-radius: var(--md-sys-shape-corner-large) !important;
+    overflow: hidden !important; 
+    -webkit-mask-image: -webkit-radial-gradient(white, black); 
+    transform: translateZ(0); 
+    padding: 32px !important; 
     border: 1px solid rgba(255,255,255,0.05); 
     box-shadow: 0 8px 24px rgba(0,0,0,0.4); 
     transition: transform 400ms var(--md-sys-motion-easing-emphasized), box-shadow 400ms, background 400ms; 
 }
-.m3-feature-card:hover { 
-    transform: translateY(-8px) scale(1.02) !important; 
-    box-shadow: 0 24px 64px rgba(0,0,0,0.7); 
-    background: var(--md-sys-color-surface-container-high); 
-}
+.m3-feature-card:hover { transform: translateY(-8px) scale(1.02) !important; box-shadow: 0 24px 64px rgba(0,0,0,0.7); background: var(--md-sys-color-surface-container-high) !important; }
 .m3-feature-card h3 { font-size: 1.5rem; margin-bottom: 12px; font-family: var(--md-sys-typescale-font); color: var(--md-sys-color-on-secondary-container); }
 .m3-feature-card p { color: rgba(255,255,255,0.7); line-height: 1.6; font-size: 1.05rem; }
 
 .m3-showcase { padding: 48px max(24px, calc(50vw - 160px - 8vw)); } 
-.m3-showcase-item { width: 320px !important; flex: 0 0 320px !important; aspect-ratio: 9/19.5; scroll-snap-align: center; border-radius: 32px; overflow: hidden; transform: scale(0.85); filter: blur(6px) brightness(0.4); box-shadow: 0 8px 32px rgba(0,0,0,0.6); transition: transform 600ms var(--md-sys-motion-easing-emphasized), filter 600ms var(--md-sys-motion-easing-emphasized), box-shadow 600ms; }
-.m3-showcase-item img { display: block; width: 100%; height: 100%; object-fit: cover; pointer-events: none; }
-.m3-showcase-item.active { transform: scale(1.05); filter: blur(0) brightness(1); box-shadow: 0 32px 80px rgba(0,0,0,0.9); border: 1px solid rgba(255,255,255,0.15); }
+.m3-showcase-item { 
+    width: 320px !important; 
+    flex: 0 0 320px !important; 
+    aspect-ratio: 9/19.5; 
+    scroll-snap-align: center; 
+    border-radius: 32px !important; 
+    -webkit-border-radius: 32px !important;
+    overflow: hidden !important; 
+    -webkit-mask-image: -webkit-radial-gradient(white, black); 
+    transform: translateZ(0) scale(0.85); 
+    background-color: #000; 
+    filter: blur(6px) brightness(0.4); 
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6); 
+    transition: transform 600ms var(--md-sys-motion-easing-emphasized), filter 600ms var(--md-sys-motion-easing-emphasized), box-shadow 600ms; 
+}
+.m3-showcase-item img { display: block; width: 100%; height: 100%; object-fit: cover; pointer-events: none; border-radius: 32px !important; }
+.m3-showcase-item.active { transform: translateZ(0) scale(1.05); filter: blur(0) brightness(1); box-shadow: 0 32px 80px rgba(0,0,0,0.9); border: 1px solid rgba(255,255,255,0.15); }
 
 /* ==========================================================================
    DEVICES 
@@ -238,8 +247,6 @@ body.loaded .m3-intro-anim { opacity: 1; transform: translateY(0) scale(1); }
 .m3-timeline { position: relative; max-width: 800px; margin: 0 auto; padding-left: 48px; }
 .m3-timeline::before { content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 4px; background: var(--md-sys-color-surface-variant); border-radius: 4px; }
 .m3-timeline-item { position: relative; margin-bottom: 48px; }
-
-/* FINAL TOUCH: Added a subtle pulsing animation to timeline dots */
 .timeline-dot { position: absolute; left: -58px; top: 24px; width: 24px; height: 24px; background: var(--md-sys-color-primary); border-radius: 50%; border: 4px solid var(--md-sys-color-surface); box-shadow: 0 0 0 4px var(--md-sys-color-surface-variant); z-index: 2; animation: dotPulse 3s infinite; }
 @keyframes dotPulse { 0% { box-shadow: 0 0 0 4px var(--md-sys-color-surface-variant); } 50% { box-shadow: 0 0 0 6px rgba(255, 123, 155, 0.4); } 100% { box-shadow: 0 0 0 4px var(--md-sys-color-surface-variant); } }
 
@@ -283,7 +290,7 @@ body.loaded .m3-intro-anim { opacity: 1; transform: translateY(0) scale(1); }
 @keyframes rippleAnim { to { transform: scale(4); opacity: 0; } }
 
 /* ==========================================================================
-   MOBILE OPTIMIZATIONS
+   MOBILE OPTIMIZATIONS (WITH FADES RESTORED & ARROWS HIDDEN)
    ========================================================================== */
 @media (max-width: 1024px) {
     .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 48px; }
@@ -304,20 +311,30 @@ body.loaded .m3-intro-anim { opacity: 1; transform: translateY(0) scale(1); }
     
     .hero-thumbnail { aspect-ratio: 16/10; border-radius: 32px; min-height: 200px; }
     
-    /* FIX: Ensured features stay properly rounded on mobile screens too */
     .m3-feature-card { 
-        width: 300px !important; 
-        flex: 0 0 300px !important; 
+        width: 280px !important; 
+        flex: 0 0 280px !important; 
         border-radius: 28px !important; 
-        padding: 24px; 
+        -webkit-border-radius: 28px !important;
+        padding: 24px !important; 
+        height: 250px !important;
     }
     
-    .m3-showcase-item { width: 260px !important; flex: 0 0 260px !important; }
-    .m3-showcase { padding: 48px max(16px, calc(50vw - 130px - 5vw)); } 
+    .m3-showcase-item { width: 240px !important; flex: 0 0 240px !important; }
+    .m3-showcase { padding: 48px max(16px, calc(50vw - 120px - 5vw)); } 
     
-    .carousel-prev, .showcase-prev { left: -10px; width: 48px; height: 48px; }
-    .carousel-next, .showcase-next { right: -10px; width: 48px; height: 48px; }
-    .carousel-mask { -webkit-mask-image: none; mask-image: none; }
+    /* FIX: HIDE ARROWS ON MOBILE. Users will naturally swipe. 
+       This perfectly solves the buttons clipping on the edges and rendering boxy. */
+    .carousel-prev, .showcase-prev, 
+    .carousel-next, .showcase-next { 
+        display: none !important; 
+    }
+    
+    /* FIX: RESTORED FADE! The fading edge is back to mask the hard cut-off box layout */
+    .carousel-mask { 
+        -webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%) !important; 
+        mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%) !important; 
+    }
     
     .m3-device-card { height: 400px; }
 }
