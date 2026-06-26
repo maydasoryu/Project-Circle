@@ -174,13 +174,11 @@ button.m3-icon-button:hover {
     box-shadow: 0 12px 32px rgba(0,0,0,0.9); 
 }
 
-/* FIX: Pure CSS active state fixes the hover freeze completely */
 button.m3-icon-button:active {
     transform: translateY(-50%) scale(0.85) !important;
     transition: transform 150ms ease;
 }
 
-/* FIX: This completely overrides and turns off the buggy JS animation */
 .btn-press-anim { animation: none !important; }
 
 /* ================== FEATURES ARROWS (PUSHED WAY OUT) ================== */
@@ -190,11 +188,10 @@ button.m3-icon-button:active {
     font-size: 1.25rem !important;
 }
 
-/* PUSHES THEM WAY OUT INTO THE SECTION'S PADDING SPACE! */
 .m3-carousel-wrapper button.carousel-prev { left: -80px !important; }
 .m3-carousel-wrapper button.carousel-next { right: -80px !important; }
 
-/* ================== SCREENSHOTS ARROWS (LEFT ALONE) ================== */
+/* ================== SCREENSHOTS ARROWS ================== */
 .m3-showcase-wrapper button.m3-icon-button {
     width: 64px !important; 
     height: 64px !important; 
@@ -354,7 +351,10 @@ button.m3-icon-button:active {
 }
 
 @media (max-width: 768px) {
-    .m3-app-bar { display: none !important; }
+    /* FIX: Restored the App Bar on Mobile! Only hides the text links, shows hamburger menu */
+    .m3-app-bar { padding: 16px 24px; }
+    .nav-links { display: none; }
+    .mobile-menu-btn { display: flex; align-items: center; justify-content: center; }
     
     .m3-section { padding: 80px 5vw; }
     .about-card { padding: 40px 24px !important; border-radius: 32px !important; }
