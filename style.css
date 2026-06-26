@@ -183,25 +183,25 @@ button.m3-icon-button:active {
 /* FIX: This completely overrides and turns off the buggy JS animation */
 .btn-press-anim { animation: none !important; }
 
-/* FEATURES ARROWS (SMALLER) */
+/* ================== FEATURES ARROWS (PUSHED WAY OUT) ================== */
 .m3-carousel-wrapper button.m3-icon-button {
-    width: 48px; 
-    height: 48px; 
-    font-size: 1.25rem;
+    width: 48px !important; 
+    height: 48px !important; 
+    font-size: 1.25rem !important;
 }
-/* Positives strictly keep them on the screen! */
-.m3-carousel-wrapper button.carousel-prev { left: 16px; }
-.m3-carousel-wrapper button.carousel-next { right: 16px; }
 
-/* SCREENSHOTS ARROWS (LARGER) */
+/* PUSHES THEM WAY OUT INTO THE SECTION'S PADDING SPACE! */
+.m3-carousel-wrapper button.carousel-prev { left: -80px !important; }
+.m3-carousel-wrapper button.carousel-next { right: -80px !important; }
+
+/* ================== SCREENSHOTS ARROWS (LEFT ALONE) ================== */
 .m3-showcase-wrapper button.m3-icon-button {
-    width: 64px; 
-    height: 64px; 
-    font-size: 1.75rem;
+    width: 64px !important; 
+    height: 64px !important; 
+    font-size: 1.75rem !important;
 }
-.m3-showcase-wrapper button.showcase-prev { left: 16px; }
-.m3-showcase-wrapper button.showcase-next { right: 16px; }
-
+.m3-showcase-wrapper button.showcase-prev { left: 16px !important; }
+.m3-showcase-wrapper button.showcase-next { right: 16px !important; }
 
 /* CAROUSEL CARDS */
 .track-shifting .m3-feature-card, .track-shifting .m3-showcase-item { transform: scale(0.92) !important; filter: blur(2px); transition: transform 300ms var(--md-sys-motion-easing-emphasized), filter 300ms; }
